@@ -1,0 +1,156 @@
+:root {
+	--green: #6aaa64;
+	--red: #b82e2e;
+	--white: #fff;
+	--black: #212121;
+	--link-color-rgb: 9, 110, 160;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+			--fg: var(--black);
+			--bg: var(--white);
+		}
+	}
+	
+	@media (prefers-color-scheme: dark) {
+		:root {
+		--fg: var(--white);
+		--bg: var(--black);
+	}
+}
+
+html {
+	font-size: 20px;
+	font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+	background-color: var(--bg);
+	color: var(--fg);
+}
+
+main {
+	padding: 60px 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+a { 
+	font-weight: 500;
+	color: rgb(var(--link-color-rgb));
+}
+
+a:hover {
+	padding: 4px;
+	margin: -4px;
+	border-radius: 6px;
+	background-color: rgba(var(--link-color-rgb), 0.2);
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem 0 0;
+}
+
+header .title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header .subheading {
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	background: rgba(100,100,100, 0.4);
+	opacity: 0.5;
+	padding: 5px 10px;
+	transform: translateY(10px) rotate(354deg);
+}
+
+h1 {
+	font-size: 1.8rem;
+	margin: 0;
+	font-weight: 700;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+}
+
+h2 {
+	height: 2rem;
+}
+
+#word {
+	display: flex;
+}
+
+#word .box {
+	--box-size: calc((100vw/5) - 15px);
+	font-size: 1.7rem;
+	width: var(--box-size);
+	height: var(--box-size);
+	max-width: 3rem;
+	max-height: 3rem;
+	margin: 5px;
+	border: 2px solid #d3d6da;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#word.valid .box {
+	background-color: var(--green);
+	border: none;
+	color: var(--white);
+}
+
+input {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+
+#result {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 0.5rem;
+	height: 5rem;
+}
+
+#result:not([visible]) {
+	visibility: hidden;
+}
+
+#result-text {
+	font-size: 1.25rem;
+	font-weight: 500;
+	margin: 0 0 0.25rem;
+}
+
+#result.valid #result-text {
+	color: var(--green);
+}
+#result.invalid #result-text {
+	color: var(--red);
+}
+
+.disclaimer {
+	font-size: 0.8rem;
+	margin: 0;
+	opacity: 0.7;
+	display: inline-block;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	font-weight: 400;
+	opacity: 0.8;
+}
