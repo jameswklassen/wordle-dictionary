@@ -150,7 +150,14 @@ input {
 
 footer {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	font-weight: 400;
 	opacity: 0.8;
+}
+
+footer svg {
+	opacity: 0.3;
+	fill: var(--fg);
 }
