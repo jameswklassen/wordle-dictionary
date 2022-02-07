@@ -35,6 +35,7 @@ main {
 }
 
 a { 
+	display: inline-block;
 	font-weight: 500;
 	color: rgb(var(--link-color-rgb));
 }
